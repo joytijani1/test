@@ -13,6 +13,13 @@
     <h1>Vanilla JavaScript App</h1>
     <a href="/secret.html">Click Here for Secrets!</a>
   </main>
+
+  <script>
+    (async function() {
+        const { text } = await( await fetch(`/api/GetUserRoles`)).json();
+        document.querySelector('#name').textContent = text;
+    }())
+    </script>
 </body>
 
 </html>
